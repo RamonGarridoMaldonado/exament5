@@ -13,8 +13,28 @@
                                 href="welcome.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/matematicas}"
-                                href="welcome.html">Matemáticas</a>
+                            <a class="nav-link active" aria-current="page" th:href="@{/matematicas}"
+                                href="../asignaturas/matematicas.html" sec:authorize="hasAnyAuthority('DIR','MAL')">Matemáticas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/lengua}"
+                                href="../asignaturas/lengua.html" sec:authorize="hasAnyAuthority('DIR','LEN')">Lengua</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/ingles}"
+                                href="../asignaturas/ingles.html" sec:authorize="hasAnyAuthority('DIR','ING')">Inglés</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/religion}"
+                                href="../asignaturas/religion.html" sec:authorize="hasAnyAuthority('REL','MAL')">Religión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/fisica}"
+                                href="../asignaturas/fisica.html" sec:authorize="hasAnyAuthority('DIR','FIS')">Fisica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/quimica}"
+                                href="../asignaturas/quimica.html" sec:authorize="hasAnyAuthority('DIR','QUI')">Química</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" th:href="@{/logout}"><i class="bi bi-box-arrow-left" th:text="logout"></i></a>

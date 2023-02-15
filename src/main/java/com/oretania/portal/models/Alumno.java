@@ -2,9 +2,16 @@ package com.oretania.portal.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import org.springframework.context.annotation.Lazy;
 
 @Entity
 public class Alumno {
@@ -16,10 +23,12 @@ public class Alumno {
     private String email;
     private String telefono;
 
+    @ManyToMany(fetch = FetchType.EAGER) 
+    @JoinTable(name = "alumno_asignatura",joinColumns = @JoinColumn(name="alumno_id"),inverseJoinColumns = @JoinColumn(name="asignatura_id"))
+    private List<Asignatura> asignaturas;
+
     private String userName;
     private String password;
-
-    
 
     public Alumno(int codigo) {
         this.codigo = codigo;
@@ -107,4 +116,5 @@ public class Alumno {
         this.password = password;
     }
 
+    
 }
